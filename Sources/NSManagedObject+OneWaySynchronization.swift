@@ -227,7 +227,7 @@ extension NSManagedObject {
   private static func owsUpdateObject(
     object srcMO: AnyObject,
     updatedObject: AnyObject,
-    inout resultSet: NSMutableSet,
+    resultSet: inout NSMutableSet,
     key: String,
     managedObjectContext moc: NSManagedObjectContext,
     syncContext context: AnyObject?) {
@@ -249,7 +249,7 @@ extension NSManagedObject {
    */
   private static func owsInsertObject(
     object srcMO: AnyObject,
-    inout resultSet: NSMutableSet,
+    resultSet: inout NSMutableSet,
     key: String,
     managedObjectContext moc: NSManagedObjectContext,
     syncContext context: AnyObject?) {
