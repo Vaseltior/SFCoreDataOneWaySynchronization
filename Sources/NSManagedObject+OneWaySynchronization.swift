@@ -24,13 +24,13 @@ import CoreData
 
 extension NSManagedObject {
   /**
-   <#Description#>
+   Sets the object priority
    
-   - parameter priority: <#priority description#>
-   - parameter object:   <#object description#>
-   - parameter key:      <#key description#>
+   - parameter priority: the priority of the object
+   - parameter object:   the object for which to set the priority
+   - parameter key:      the key used to set the priority of the object
    */
-  public func setObjectPriority(priority: NSNumber, object: AnyObject, key: String) {
+  public func sfSetObjectPriority(priority: NSNumber, object: AnyObject, key: String) {
   }
   
   /**
@@ -44,7 +44,7 @@ extension NSManagedObject {
    
    - returns: `true` if the keys that identify the objects are equal, otherwise returns `false`.
    */
-  public class func compareUniqueKeyFrom(
+  public class func sfCompareUniqueKeyFrom(
     srcObject: AnyObject,
     with dstObject: AnyObject,
     context: AnyObject?) -> Bool {
@@ -60,7 +60,7 @@ extension NSManagedObject {
    
    - returns: the newly inserted managed object
    */
-  public class func createObjectWithData(
+  public class func sfCreateObjectWithData(
     data: AnyObject,
     managedObjectContext moc: NSManagedObjectContext,
     context: AnyObject?
@@ -77,7 +77,7 @@ extension NSManagedObject {
    
    - returns: the updated managed object
    */
-  public class func updateObjectWithData(
+  public class func sfUpdateObjectWithData(
     data: AnyObject,
     updatedObject: AnyObject,
     managedObjectContext moc: NSManagedObjectContext,
@@ -95,7 +95,7 @@ extension NSManagedObject {
    
    - returns: the deleted managed object
    */
-  public class func deleteObjectWithData(
+  public class func sfDeleteObjectWithData(
     data: AnyObject,
     managedObjectContext moc: NSManagedObjectContext,
     context: AnyObject?
@@ -104,15 +104,15 @@ extension NSManagedObject {
   }
   
   /**
-   <#Description#>
+   do the whole synchronization
    
-   - parameter inputObjects: <#inputObjects description#>
-   - parameter existingData: <#existingData description#>
-   - parameter key:          <#key description#>
-   - parameter moc:          <#moc description#>
-   - parameter context:      <#context description#>
+   - parameter inputObjects: source (master)
+   - parameter existingData: destination (slave)
+   - parameter key:          the priority key
+   - parameter moc:          the managed object context in which to operate the synchronization
+   - parameter context:      the context if any needed
    
-   - returns: <#return value description#>
+   - returns: the resulting set 
    */
   public class func synchronizeSortedInputData(
     inputObjects: [AnyObject],
@@ -146,7 +146,7 @@ extension NSManagedObject {
           let dstMO: AnyObject = existingData[dstIndex]
           
           // If the elements are equal this means that we already have the object, and it is an update.
-          if self.compareUniqueKeyFrom(srcMO, with: dstMO, context: context) == true {
+          if self.sfCompareUniqueKeyFrom(srcMO, with: dstMO, context: context) == true {
             
             // We should update
             self.owsUpdateObject(
@@ -189,11 +189,11 @@ extension NSManagedObject {
               
               let dstMOPlusOne = existingData[dstIndexPlusOne] as! NSManagedObject
               
-              if self.compareUniqueKeyFrom(srcMO, with:dstMOPlusOne, context:context) == true {
+              if self.sfCompareUniqueKeyFrom(srcMO, with:dstMOPlusOne, context:context) == true {
                 
                 // If objects at this point are identical,
                 // it is a deletion of the Core Data object
-                self.deleteObjectWithData(dstMO, managedObjectContext:moc, context:context)
+                self.sfDeleteObjectWithData(dstMO, managedObjectContext:moc, context:context)
                 
                 dstIndex += 1
                 
@@ -232,8 +232,8 @@ extension NSManagedObject {
     managedObjectContext moc: NSManagedObjectContext,
     syncContext context: AnyObject?) {
       
-      if let updated = self.updateObjectWithData(srcMO, updatedObject: updatedObject, managedObjectContext:moc, context:context) {
-        updated.setObjectPriority(resultSet.count, object:updated, key:key)
+      if let updated = self.sfUpdateObjectWithData(srcMO, updatedObject: updatedObject, managedObjectContext:moc, context:context) {
+        updated.sfSetObjectPriority(resultSet.count, object:updated, key:key)
         resultSet.addObject(updated)
       }
   }
@@ -254,8 +254,8 @@ extension NSManagedObject {
     managedObjectContext moc: NSManagedObjectContext,
     syncContext context: AnyObject?) {
       
-      if let created: NSManagedObject = self.createObjectWithData(srcMO, managedObjectContext: moc, context: context) {
-        created.setObjectPriority(resultSet.count, object:created, key:key)
+      if let created: NSManagedObject = self.sfCreateObjectWithData(srcMO, managedObjectContext: moc, context: context) {
+        created.sfSetObjectPriority(resultSet.count, object:created, key:key)
         /*if resultSet.containsObject(created) {
         oneWaySwellLogger.trace { return "duplicate created" }
         }*/
@@ -281,7 +281,7 @@ extension NSManagedObject {
       // that have not been deleted yet if any is remaining.
       if !existingData.sfIsIndexOutOfBounds(dstIndex) {
         for i in dstIndex..<existingData.count {
-          self.deleteObjectWithData(existingData[i], managedObjectContext: moc, context: context)
+          self.sfDeleteObjectWithData(existingData[i], managedObjectContext: moc, context: context)
         }
       }
   }
