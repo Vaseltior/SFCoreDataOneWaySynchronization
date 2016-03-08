@@ -8,5 +8,5 @@ branches:
     - develop
 script:
 - xctool -project SFCoreDataOneWaySynchronization.xcodeproj -scheme SFCoreDataOneWaySynchronization -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xctool test -project SFCoreDataOneWaySynchronization.xcodeproj -scheme SFCoreDataOneWaySynchronizationTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -project SFCoreDataOneWaySynchronization.xcodeproj -scheme SFCoreDataOneWaySynchronization -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 
