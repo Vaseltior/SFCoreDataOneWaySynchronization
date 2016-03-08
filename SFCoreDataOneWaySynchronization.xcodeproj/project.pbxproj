@@ -331,6 +331,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SFCoreDataOneWaySynchronization/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaseltior.SFCoreDataOneWaySynchronization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,6 +350,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SFCoreDataOneWaySynchronization/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaseltior.SFCoreDataOneWaySynchronization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +397,7 @@
 				F52414A31C8F14B700AD6547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F52414A41C8F14B700AD6547 /* Build configuration list for PBXNativeTarget "SFCoreDataOneWaySynchronizationTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +406,7 @@
 				F52414A61C8F14B700AD6547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
