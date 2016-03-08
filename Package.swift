@@ -19,4 +19,3 @@ import PackageDescription
 let package = Package(
     name: "SFCoreDataOneWaySynchronization"
 )
-
