@@ -33,6 +33,7 @@
 		F524149E1C8F14B700AD6547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F52414AC1C8F17E500AD6547 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		F52414AD1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+OneWaySynchronization.swift"; sourceTree = "<group>"; };
+		F593F75C1C8F3BF000D3BAC6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		F524148F1C8F14B700AD6547 /* SFCoreDataOneWaySynchronization */ = {
 			isa = PBXGroup;
 			children = (
+				F593F75C1C8F3BF000D3BAC6 /* Package.swift */,
 				F52414AB1C8F17E500AD6547 /* Sources */,
 				F52414901C8F14B700AD6547 /* SFCoreDataOneWaySynchronization.h */,
 				F52414921C8F14B700AD6547 /* Info.plist */,
