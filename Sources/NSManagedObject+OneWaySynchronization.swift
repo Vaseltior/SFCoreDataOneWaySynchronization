@@ -114,7 +114,7 @@ extension NSManagedObject {
    
    - returns: the resulting set 
    */
-  public class func synchronizeSortedInputData(
+  public class func sfSynchronizeSortedInputData(
     inputObjects: [AnyObject],
     withSortedExistingData existingData: [AnyObject],
     priorityKey key: String,
