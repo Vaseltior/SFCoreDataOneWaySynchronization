@@ -7,7 +7,6 @@ disabled_rules: # rule identifiers to exclude from running
   - legacy_constructor
   - force_try
   - legacy_constant
-  - variable_name_min_length 
   # Find all the available rules by running:
   # swiftlint rules
 
@@ -44,8 +43,9 @@ type_body_length:
 function_body_length:
   - 40 # warning
   - 340 # error
-variable_name_min_length : 1
-variable_name_max_length : 64
+variable_name:
+  min_length: 1
+  max_length: 64
 type_name:
   min_length: 4 # only warning
   max_length: # warning and error
