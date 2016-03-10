@@ -132,7 +132,7 @@ extension NSManagedObject {
         let srcMO: AnyObject = inputObjects[srcIndex]
         
         // Have we reached yet the end of the source array?
-        if existingData.sfIsIndexOutOfBounds(dstIndex) {
+        if (dstIndex >= existingData.count) || (dstIndex < 0) {
           
           // There we are out of bounds, so this is an insertion --> Create the object
           self.owsInsertObject(object: srcMO, resultSet: &resultSet, key: key, managedObjectContext: moc, syncContext: context)
@@ -176,7 +176,7 @@ extension NSManagedObject {
             let dstIndexPlusOne = dstIndex + 1
             
             // Do this element exist ?
-            if existingData.sfIsIndexOutOfBounds(dstIndexPlusOne) {
+            if (dstIndexPlusOne >= existingData.count) || (dstIndexPlusOne < 0) {
               
               // There we are out of bounds, so this is an insertion
               self.owsInsertObject(object: srcMO, resultSet: &resultSet, key: key, managedObjectContext: moc, syncContext: context)
@@ -279,7 +279,7 @@ extension NSManagedObject {
       
       // The last step consist in deleting all the objects of the core data
       // that have not been deleted yet if any is remaining.
-      if !existingData.sfIsIndexOutOfBounds(dstIndex) {
+      if !((dstIndex >= existingData.count) || (dstIndex < 0)) {
         for i in dstIndex..<existingData.count {
           self.sfDeleteObjectWithData(existingData[i], managedObjectContext: moc, context: context)
         }
