@@ -1,0 +1,12 @@
+# reference: http://www.objc.io/issue-6/travis-ci.html
+
+language: objective-c
+osx_image: xcode7.2
+branches:
+  only:
+    - master
+    - develop
+script:
+- xctool -project SFCoreDataOneWaySynchronization.xcodeproj -scheme SFCoreDataOneWaySynchronization -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -project SFCoreDataOneWaySynchronization.xcodeproj -scheme SFCoreDataOneWaySynchronization -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+

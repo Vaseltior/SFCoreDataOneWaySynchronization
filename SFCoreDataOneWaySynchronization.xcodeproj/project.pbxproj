@@ -124,6 +124,7 @@
 				F52414891C8F14B700AD6547 /* Frameworks */,
 				F524148A1C8F14B700AD6547 /* Headers */,
 				F524148B1C8F14B700AD6547 /* Resources */,
+				F5FE7A431C8F6DCD00959C48 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -204,6 +205,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F5FE7A431C8F6DCD00959C48 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F52414881C8F14B700AD6547 /* Sources */ = {
@@ -350,6 +368,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = SFCoreDataOneWaySynchronization/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -357,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaseltior.SFCoreDataOneWaySynchronization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

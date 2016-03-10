@@ -1,0 +1,55 @@
+disabled_rules: # rule identifiers to exclude from running
+  - variable_name
+  - trailing_whitespace
+  - control_statement
+  - force_cast
+  - valid_docs
+  - legacy_constructor
+  - force_try
+  - legacy_constant
+  # Find all the available rules by running:
+  # swiftlint rules
+
+# parameterized rules can be customized from this configuration file
+line_length:
+  - 160 # warning
+  - 161 # error
+  
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+colon: error
+closing_brace: error
+comma: error
+control_statement: error
+opening_brace: error
+trailing_newline: error
+leading_whitespace: error
+operator_whitespace: error
+return_arrow_whitespace: error
+statement_position: error
+trailing_semicolon: error
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - sources/004-vendor
+  - synchro-agenda/sources/004-vendor
+  - synchro-agenda/sources/003-data-access-layer/Swagger/Models.swift
+
+# parameterized rules are first parameterized as a warning level, then error level.
+type_body_length:
+  - 200 # warning
+  - 1000 # error
+function_body_length:
+  - 40 # warning
+  - 340 # error
+variable_name:
+  min_length: 1
+  max_length: 64
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 60
+    error: 70
+  excluded: iPhone # excluded via string
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
