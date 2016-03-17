@@ -11,6 +11,7 @@
 		F52414981C8F14B700AD6547 /* SFCoreDataOneWaySynchronization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F524148D1C8F14B700AD6547 /* SFCoreDataOneWaySynchronization.framework */; };
 		F524149D1C8F14B700AD6547 /* SFCoreDataOneWaySynchronizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524149C1C8F14B700AD6547 /* SFCoreDataOneWaySynchronizationTests.swift */; };
 		F52414AF1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52414AD1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift */; };
+		F56BB8E61C9A01AC00F1729C /* OneWaySynchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56BB8E51C9A01AC00F1729C /* OneWaySynchronization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,8 @@
 		F524149C1C8F14B700AD6547 /* SFCoreDataOneWaySynchronizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCoreDataOneWaySynchronizationTests.swift; sourceTree = "<group>"; };
 		F524149E1C8F14B700AD6547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F52414AD1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+OneWaySynchronization.swift"; sourceTree = "<group>"; };
+		F56BB8E51C9A01AC00F1729C /* OneWaySynchronization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneWaySynchronization.swift; sourceTree = "<group>"; };
+		F56BB8E71C9A19E800F1729C /* OneWay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OneWay.playground; sourceTree = "<group>"; };
 		F593F75C1C8F3BF000D3BAC6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -56,6 +59,7 @@
 		F52414831C8F14B700AD6547 = {
 			isa = PBXGroup;
 			children = (
+				F56BB8E71C9A19E800F1729C /* OneWay.playground */,
 				F524148F1C8F14B700AD6547 /* SFCoreDataOneWaySynchronization */,
 				F524149B1C8F14B700AD6547 /* SFCoreDataOneWaySynchronizationTests */,
 				F524148E1C8F14B700AD6547 /* Products */,
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F52414AD1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift */,
+				F56BB8E51C9A01AC00F1729C /* OneWaySynchronization.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52414AF1C8F17E500AD6547 /* NSManagedObject+OneWaySynchronization.swift in Sources */,
+				F56BB8E61C9A01AC00F1729C /* OneWaySynchronization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
